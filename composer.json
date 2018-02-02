@@ -1,6 +1,7 @@
 {
   "name": "bonnier/wp-bonnier-cookie",
   "description": "Implements Bonnier Cookie Policy into WordPress",
+  "type": "wordpress-plugin",
   "authors": [
     {
       "name": "Bonnier Publications",

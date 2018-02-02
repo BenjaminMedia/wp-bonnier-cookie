@@ -11,7 +11,6 @@ class SettingsPage
     const Settings_PAGE_NAME = 'Bonnier Cookie';
     const Settings_PAGE_TITLE = 'WP Bonnier Cookie settings:';
     const NOTICE_PREFIX = 'WP Bonnier Cookie:';
-    const ROLES_PREFIX = 'bp_wa_';
 
     private $settingsFields = [
         'cookie_name' => [
@@ -29,7 +28,6 @@ class SettingsPage
     ];
 
     private $settingsValues;
-    private $currentLocale;
 
     public function __construct()
     {
