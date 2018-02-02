@@ -23,7 +23,7 @@ class SettingsPage
             'type' => 'text',
             'name' => 'Cookie script id (data-cbid)',
         ],
-        'cookie_page' => [
+        'cookie_declaration' => [
             'type' => 'text',
             'name' => 'Link to declaration',
         ],
@@ -155,35 +155,13 @@ class SettingsPage
      * @param $locale
      * @return string
      */
-    public function locale_to_lang_code($locale)
+    public static function locale_to_lang_code($locale)
     {
         return substr($locale, 0, 2);
     }
 
-    public function set_current_locale($locale)
-    {
-        if ($locale && !empty($locale) && $this->languages_is_enabled()) {
-            $this->currentLocale = $this->locale_to_lang_code($locale);
-        } else {
-            $this->currentLocale = null;
-        }
-    }
-
-    public function get_current_locale()
-    {
-        if ($this->currentLocale !== null) {
-            return $this->currentLocale;
-        }
-        $currentLang = $this->get_current_language();
-        return $currentLang ? $currentLang->locale : null;
-    }
-
     public function get_localized_setting_key($settingKey, $locale = null)
     {
-        if ($locale === null && $this->languages_is_enabled()) {
-            $locale = $this->get_current_locale();
-        }
-
         if ($locale) {
             return $this->locale_to_lang_code($locale) . '_' . $settingKey;
         }
@@ -260,11 +238,13 @@ class SettingsPage
         return true;
     }
 
-    public function get_setting_value($settingKey)
+    public function get_setting_value($settingKey, $locale = null)
     {
         if (!$this->settingsValues) {
             $this->settingsValues = get_option(self::SETTINGS_KEY);
         }
+
+        $settingKey = $this->get_localized_setting_key($settingKey, $locale);
 
         if (isset($this->settingsValues[$settingKey]) && !empty($this->settingsValues[$settingKey])) {
             return $this->settingsValues[$settingKey];

@@ -11,6 +11,7 @@
 namespace Bonnier\WP\Cookie;
 
 use Bonnier\WP\Cookie\Settings\SettingsPage;
+use Bonnier\WP\Cookie\Assets\Scripts;
 
 defined('ABSPATH') or die('No script kiddies please!');
 
@@ -63,17 +64,13 @@ class WpBonnierCookie
         load_plugin_textdomain(self::TEXT_DOMAIN, false, dirname($this->basename.'/languages'));
 
         $this->settings = new SettingsPage();
+        $this->scripts = new Scripts();
+
     }
 
     private function bootstrap()
     {
-//        Post::watch_post_changes($this->settings);
-//        CacheApi::bootstrap($this->settings);
-//        PostMetaBox::register($this->settings);
-        if($this->settings->languages_is_enabled()){
-            dd(pll_get_post_language(get_the_ID()));
-        }
-
+        $this->scripts->bootstrap($this->settings);
     }
 
     public static function instance()
