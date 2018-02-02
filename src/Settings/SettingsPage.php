@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Bonnier\WP\Cookie\Settings;
 
 class SettingsPage
@@ -27,11 +26,6 @@ class SettingsPage
             'type' => 'text',
             'name' => 'Link to declaration',
         ],
-        'cookie_privacy_policy' => [
-            'type' => 'text',
-            'name' => 'Link to privacy policy',
-        ],
-
     ];
 
     private $settingsValues;

@@ -61,7 +61,7 @@ class WpBonnierCookie
         $this->plugin_dir = plugin_dir_path($this->file);
         $this->plugin_url = plugin_dir_url($this->file);
 
-        load_plugin_textdomain(self::TEXT_DOMAIN, false, dirname($this->basename.'/languages'));
+        load_plugin_textdomain(self::TEXT_DOMAIN, false, dirname($this->basename . '/languages'));
 
         $this->settings = new SettingsPage();
         $this->scripts = new Scripts();
@@ -93,4 +93,4 @@ function instance()
     return WpBonnierCookie::instance();
 }
 
-add_action('plugins_loaded', __NAMESPACE__.'\instance', 0);
+add_action('plugins_loaded', __NAMESPACE__ . '\instance', 0);
