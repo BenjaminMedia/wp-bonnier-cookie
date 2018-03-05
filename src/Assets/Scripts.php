@@ -81,7 +81,7 @@ class Scripts
 
         if ($cookieName && $cookieDeclaration) {
             $html = '
-            <div class="afubar-top">
+            <div class="afubar-top" style="position: relative;">
                 <ul id="afubar_options" class="pull-right">
                     <li>
                     <a href="' . $cookieDeclaration . '" id="cookie" target="_blank" rel="nofollow">
