@@ -103,13 +103,8 @@ class Scripts
         $cookieScriptId = $this::$settings->get_setting_value('cookie_script_id', $this->locale);
 
         if ($cookieScriptId && $lang) {
-            $scripts = '
-              <script id="CookieConsent" data-culture="' . $lang . '" src="https://policy.cookieinformation.com/uc.js" 
-              data-cbid="' . $cookieScriptId . '" type="text/javascript"></script>
-              
-               <script id="CookiePolicy" data-culture="' . $lang . '" src="https://policy.cookieinformation.com/' . $cookieScriptId . '/cd.js" 
-               data-cbid="' . $cookieScriptId . '" type="text/javascript"></script>
-        ';
+            $scripts = '<script id="CookieConsent" data-culture="' . $lang . '" src="https://policy.cookieinformation.com/uc.js" 
+              data-cbid="' . $cookieScriptId . '" type="text/javascript"></script>';
 
             echo $scripts;
         }
