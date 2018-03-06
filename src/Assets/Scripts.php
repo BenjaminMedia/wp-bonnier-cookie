@@ -46,6 +46,8 @@ class Scripts
                   line-height: 14px;
                   padding: .3em 10px;
                   min-height: 22px;
+                  position: relative;
+                  z-index: 999999999999;
                 }
                 .afubar-top ul {
                   height: auto;
@@ -81,7 +83,7 @@ class Scripts
 
         if ($cookieName && $cookieDeclaration) {
             $html = '
-            <div class="afubar-top" style="position: relative;">
+            <div class="afubar-top">
                 <ul id="afubar_options" class="pull-right">
                     <li>
                     <a href="' . $cookieDeclaration . '" id="cookie" target="_blank" rel="nofollow">
