@@ -39,6 +39,12 @@ class Scripts
         $styles =
             '
               <style>
+              
+                #CookieInformationDialog .cookie-message{
+                    position: relative !important;
+                    z-index: 999999999999;
+                }
+                
                 .afubar-top {
                   background: #F0F0F0;
                   border-bottom: 1px solid #E7E7E7;

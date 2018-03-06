@@ -3,7 +3,7 @@
  * Plugin Name: WP Bonnier Cookie
  * Plugin URI: http://bonnierpublications.com
  * Description: Bonnier Cookie Plugin
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Mohamed Salem Lamiri
  * Author URI: http://bonnierpublications.com
  */
