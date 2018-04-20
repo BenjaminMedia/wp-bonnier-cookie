@@ -22,6 +22,7 @@ class Scripts
         self::$settings = $settings;
 
         add_action('wp_head', [$this, 'add_cookie_to_header']);
+        add_action('get_header', [$this, 'add_cookie_html']);
     }
 
     public function add_cookie_to_header()
@@ -30,8 +31,11 @@ class Scripts
 
         $this->add_styles();
         //Html will be added to the body
-        $this->add_html();
         $this->add_scripts();
+    }
+
+    public function add_cookie_html(){
+      $this->add_html();
     }
 
     public function add_styles()
